@@ -51,30 +51,317 @@ export default [
     ]
   },
   {
-    path: '',
-    name: 'doc',
-    meta: {
-      title: '文档',
-      href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
-    }
-  },
-  {
-    path: '/join',
-    name: 'join',
+    path: '/permissions',
+    name: 'permissions',
     component: Main,
     meta: {
-      hideInBread: true
+      icon: 'ios-settings',
+      title: '权限管理'
     },
     children: [
       {
-        path: 'join_page',
-        name: 'join_page',
+        path: 'permissions_department',
+        name: 'permissions_department',
         meta: {
-          icon: '_qq',
-          title: 'QQ群'
+          icon: 'ios-paper',
+          title: '部门设置'
         },
-        component: () => import('@/view/join-page.vue')
+        component: () => import('@/view/permissions/permissions_department.vue')
+      },
+      {
+        path: 'permissions_operator',
+        name: 'permissions_operator',
+        meta: {
+          icon: 'ios-people',
+          title: '操作员设置'
+        },
+        component: () => import('@/view/permissions/permissions_operator.vue')
+      },
+      {
+        path: 'permissions_institutions',
+        name: 'permissions_institutions',
+        meta: {
+          icon: 'ios-color-filter-outline',
+          title: '部门设置'
+        },
+        component: () => import('@/view/permissions/permissions_institutions.vue')
+      }
+    ]
+  },
+  {
+    path: '/scale',
+    name: 'scale',
+    meta: {
+      icon: 'ios-list-box-outline',
+      title: '量表管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'scale_classification',
+        name: 'scale_classification',
+        meta: {
+          icon: 'md-list',
+          title: '量表分类'
+        },
+        component: () => import('@/view/scale/scale_classification.vue')
+      },
+      {
+        path: 'scale_explain',
+        name: 'scale_explain',
+        meta: {
+          icon: 'md-link',
+          title: '量表解释'
+        },
+        component: () => import('@/view/scale/scale_explain.vue')
+      },
+      {
+        path: 'scale_interface',
+        name: 'scale_interface',
+        meta: {
+          icon: 'ios-leaf-outline',
+          title: '量表计算接口'
+        },
+        component: () => import('@/view/scale/scale_interface.vue')
+      },
+      {
+        path: 'scale_questions',
+        name: 'scale_questions',
+        meta: {
+          icon: 'ios-key-outline',
+          title: '量表试题对应'
+        },
+        component: () => import('@/view/scale/scale_questions.vue')
+      }
+    ]
+  },
+  {
+    path: '/report',
+    name: 'report',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '报告管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'report_view',
+        name: 'report_view',
+        meta: {
+          icon: 'ios-document',
+          title: '报告分类'
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'report_view_analysis',
+            name: 'report_view_analysis',
+            meta: {
+              icon: 'ios-document',
+              title: '分析报告'
+            },
+            component: () => import('@/view/report/report_view/report_view_analysis.vue')
+          },
+          {
+            path: 'report_view_opinion',
+            name: 'report_view_opinion',
+            meta: {
+              icon: 'ios-document',
+              title: '诊断意见'
+            },
+            component: () => import('@/view/report/report_view/report_view_opinion.vue')
+          }
+        ]
+      },
+      {
+        path: 'report_settings',
+        name: 'report_settings',
+        meta: {
+          icon: 'md-clipboard',
+          title: '报告设置'
+        },
+        component: () => import('@/view/report/report_settings.vue')
+      },
+      {
+        path: 'report_print',
+        name: 'report_print',
+        meta: {
+          icon: 'md-clipboard',
+          title: '打印报告'
+        },
+        component: () => import('@/view/report/report_print.vue')
+      },
+      {
+        path: 'small_program',
+        name: 'small_program',
+        meta: {
+          icon: 'md-clipboard',
+          title: '打印报告'
+        },
+        component: () => import('@/view/report/small_program.vue')
+      }
+    ]
+  },
+  {
+    path: '/test',
+    name: 'test',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '测试管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'test_questions',
+        name: 'test_questions',
+        meta: {
+          icon: 'ios-document',
+          title: '测试题'
+        },
+        component: () => import('@/view/test/test_questions.vue')
+      },
+      {
+        path: 'test_small_program',
+        name: 'test_small_program',
+        meta: {
+          icon: 'md-clipboard',
+          title: '小程序接口'
+        },
+        component: () => import('@/view/test/test_small_program.vue')
+      }
+    ]
+  },
+  {
+    path: '/statistical',
+    name: 'statistical',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '统计管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'statistical_use',
+        name: 'statistical_use',
+        meta: {
+          icon: 'ios-document',
+          title: '使用量'
+        },
+        component: () => import('@/view/statistical/statistical_use.vue')
+      },
+      {
+        path: 'statistical_symptoms',
+        name: 'statistical_symptoms',
+        meta: {
+          icon: 'md-clipboard',
+          title: '病症统计'
+        },
+        component: () => import('@/view/statistical/statistical_symptoms.vue')
+      },
+      {
+        path: 'statistical_system',
+        name: 'statistical_system',
+        meta: {
+          icon: 'md-clipboard',
+          title: '系统统计'
+        },
+        component: () => import('@/view/statistical/statistical_system.vue')
+      },
+      {
+        path: 'statistical_industry',
+        name: 'statistical_industry',
+        meta: {
+          icon: 'md-clipboard',
+          title: '行业统计'
+        },
+        component: () => import('@/view/statistical/statistical_industry.vue')
+      },
+      {
+        path: 'statistical_age',
+        name: 'statistical_age',
+        meta: {
+          icon: 'md-clipboard',
+          title: '年龄分析'
+        },
+        component: () => import('@/view/statistical/statistical_age.vue')
+      }
+    ]
+  },
+  {
+    path: '/quality',
+    name: 'quality',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '质检管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'quality_cases',
+        name: 'quality_cases',
+        meta: {
+          icon: 'ios-document',
+          title: '病例填写'
+        },
+        component: () => import('@/view/quality/quality_cases.vue')
+      }
+    ]
+  },
+  {
+    path: '/customer',
+    name: 'customer',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '质检管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'customer_user',
+        name: 'customer_user',
+        meta: {
+          icon: 'ios-document',
+          title: '用户管理'
+        },
+        component: () => import('@/view/customer/customer_user.vue')
+      },
+      {
+        path: 'customer_industry',
+        name: 'customer_industry',
+        meta: {
+          icon: 'ios-document',
+          title: '行业管理'
+        },
+        component: () => import('@/view/customer/customer_industry.vue')
+      }
+    ]
+  },
+  {
+    path: '/system',
+    name: 'system',
+    meta: {
+      icon: 'md-cloud-upload',
+      title: '系统管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'system_password',
+        name: 'system_password',
+        meta: {
+          icon: 'ios-document',
+          title: '修改密码'
+        },
+        component: () => import('@/view/system/system_password.vue')
+      },
+      {
+        path: 'system_databackup',
+        name: 'system_databackup',
+        meta: {
+          icon: 'ios-document',
+          title: '数据备份'
+        },
+        component: () => import('@/view/system/system_databackup.vue')
       }
     ]
   },
@@ -205,35 +492,6 @@ export default [
           title: '自定义图标'
         },
         component: () => import('@/view/components/icons/icons.vue')
-      }
-    ]
-  },
-  {
-    path: '/update',
-    name: 'update',
-    meta: {
-      icon: 'md-cloud-upload',
-      title: '数据上传'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'update_table_page',
-        name: 'update_table_page',
-        meta: {
-          icon: 'ios-document',
-          title: '上传Csv'
-        },
-        component: () => import('@/view/update/update-table.vue')
-      },
-      {
-        path: 'update_paste_page',
-        name: 'update_paste_page',
-        meta: {
-          icon: 'md-clipboard',
-          title: '粘贴表格数据'
-        },
-        component: () => import('@/view/update/update-paste.vue')
       }
     ]
   },

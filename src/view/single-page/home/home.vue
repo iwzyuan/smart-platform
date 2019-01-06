@@ -11,7 +11,7 @@
     <Row :gutter="20" style="margin-top: 10px;">
       <i-col :md="24" :lg="8" style="margin-bottom: 20px;">
         <Card shadow>
-          <chart-pie style="height: 300px;" :value="pieData" text="用户访问来源"></chart-pie>
+          <chart-pie style="height: 300px;" :value="pieData" text="用户诊断来源"></chart-pie>
         </Card>
       </i-col>
       <i-col :md="24" :lg="16" style="margin-bottom: 20px;">
@@ -45,19 +45,17 @@ export default {
   data () {
     return {
       inforCardData: [
-        { title: '新增用户', icon: 'md-person-add', count: 803, color: '#2d8cf0' },
-        { title: '累计点击', icon: 'md-locate', count: 232, color: '#19be6b' },
+        { title: '新增试题', icon: 'md-person-add', count: 803, color: '#2d8cf0' },
+        { title: '累计答题', icon: 'md-locate', count: 232, color: '#19be6b' },
         { title: '新增问答', icon: 'md-help-circle', count: 142, color: '#ff9900' },
         { title: '分享统计', icon: 'md-share', count: 657, color: '#ed3f14' },
-        { title: '新增互动', icon: 'md-chatbubbles', count: 12, color: '#E46CBB' },
-        { title: '新增页面', icon: 'md-map', count: 14, color: '#9A66E4' }
+        { title: '新增客户', icon: 'md-chatbubbles', count: 12, color: '#E46CBB' },
+        { title: '新增数据', icon: 'md-map', count: 14, color: '#9A66E4' }
       ],
       pieData: [
-        {value: 335, name: '直接访问'},
-        {value: 310, name: '邮件营销'},
-        {value: 234, name: '联盟广告'},
-        {value: 135, name: '视频广告'},
-        {value: 1548, name: '搜索引擎'}
+        { value: 335, name: '直接访问' },
+        { value: 310, name: '朋友推荐' },
+        { value: 234, name: '公众号倒流' }
       ],
       barData: {
         Mon: 13253,
@@ -65,8 +63,8 @@ export default {
         Wed: 26321,
         Thu: 12340,
         Fri: 24643,
-        Sat: 1322,
-        Sun: 1324
+        Sat: 13222,
+        Sun: 13243
       }
     }
   },
